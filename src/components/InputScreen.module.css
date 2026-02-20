@@ -1,0 +1,215 @@
+/* ── Page Layout ─────────────────────────────────────────── */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 4rem;
+  background: linear-gradient(145deg, #e9f0fb 0%, #f1f5fb 60%, #e4f0ff 100%);
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeDown .5s ease both;
+}
+
+.logo {
+  font-size: 3rem;
+  margin-bottom: .5rem;
+  filter: drop-shadow(0 4px 8px rgba(26,86,219,.25));
+}
+
+.title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--primary-dark);
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  margin-top: .4rem;
+  color: var(--text-secondary);
+  font-size: .97rem;
+}
+
+/* ── Main Content ────────────────────────────────────────── */
+.main {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Form Card ───────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  animation: fadeUp .5s ease .1s both;
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: .35rem;
+}
+
+.cardSubtitle {
+  color: var(--text-secondary);
+  font-size: .9rem;
+  margin-bottom: 1.75rem;
+  line-height: 1.5;
+}
+
+/* ── Field Groups ────────────────────────────────────────── */
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  margin-bottom: 1.25rem;
+}
+
+.label {
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.select,
+.input {
+  width: 100%;
+  padding: .65rem .9rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: .97rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  background: var(--bg);
+  transition: var(--transition);
+  outline: none;
+}
+
+.select:focus,
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26,86,219,.12);
+  background: #fff;
+}
+
+.error {
+  font-size: .8rem;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+/* ── Summary Row ─────────────────────────────────────────── */
+.summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary-light);
+  border-radius: var(--radius-sm);
+  padding: .7rem 1rem;
+  font-size: .9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  border: 1px solid #c7d8f8;
+}
+
+.gap {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+/* ── CTA Button ─────────────────────────────────────────── */
+.cta {
+  width: 100%;
+  padding: .85rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(26,86,219,.4);
+  letter-spacing: .2px;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26,86,219,.5);
+}
+
+.cta:active { transform: translateY(0); }
+
+/* ── How It Works ─────────────────────────────────────────── */
+.howIt {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  animation: fadeUp .5s ease .2s both;
+}
+
+.howTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  flex: 1;
+  min-width: 90px;
+}
+
+.stepIcon {
+  font-size: 1.6rem;
+}
+
+.stepLabel {
+  font-size: .78rem;
+  text-align: center;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ── Animations ───────────────────────────────────────────── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .card { padding: 1.5rem 1.25rem; }
+  .steps { flex-direction: column; align-items: flex-start; }
+  .step  { flex-direction: row; min-width: unset; }
+}
